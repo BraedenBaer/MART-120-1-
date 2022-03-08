@@ -1,0 +1,27 @@
+
+
+li{
+  font-size: 40
+}
+
+.newlook{
+  font font-family: arial;
+  color:green
+}
+
+.fancylook{
+  font-family: fantasy;
+  color:grey
+}
+
+#bridge{
+  color:blue; font-size: 30
+}
+
+#caferio{
+  color:purple
+}
+
+body{
+  background-image: url("images/Turtle.webp");
+}
