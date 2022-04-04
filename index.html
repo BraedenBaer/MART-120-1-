@@ -1,0 +1,119 @@
+<html>
+
+    <head>
+        <title>
+            First p5.js page
+        </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+        <script>
+
+          var headX = 250;
+          var headY = 100;
+          var headDirection = 1;
+
+          var bodyX = 200
+          var bodyY = 185
+          var bodyDirection = 3;
+
+          var size = 22;
+          var count = 0;
+          var sizeDirection = 2;
+
+          var leftarmX = 150;
+          var leftarmY = 195;
+          var leftarmDirection = 3;
+
+          var rightlegY = 335;
+          var rightlegDirection = 4;
+
+          var rightarmX = 300;
+          var rightarmY = 195;
+          var rightarmDirection = 3;
+
+            function setup()
+            {
+                createCanvas(600,500);
+            }
+            function draw()
+            {
+
+              background(150,45,78);
+              textSize(size);
+              size+= sizeDirection;
+              count++;
+              if(count > 5)
+              {
+                sizeDirection *=-1;
+                count = 0;
+              }
+              text("Self portrait Of Braeden Lee Baerlocher.", 10,450);
+
+              // head
+              fill(230,220, 0);
+              circle(headX,headY,175);
+              headX+=headDirection;
+              if(headX >= 500 || headX <=82)
+              {
+                headDirection *= -1;
+              }
+
+              // eyes
+              strokeWeight(5);
+              fill(0);
+              point(220,75);
+              point(285,75);
+
+              // nose
+              triangle(245,90);
+
+              // mouth
+              circle(265,135, 30, 45)
+
+              // body
+              fill(80, 24, 120);
+              rect(200,bodyY,100,150);
+              bodyY += bodyDirection;
+              if(bodyY <= 0 || bodyY >= 350 )
+              {
+                bodyDirection *= -1;
+              }
+              // decoration
+              fill(255);
+              triangle(220,320,250,220,280,320)
+              // right arm
+              fill(80, 24, 120);
+              rect(rightarmX,rightarmY,50,10);
+              rightarmX+=rightarmDirection;
+              if(rightarmX >= 500 || rightarmX <= 82)
+              {
+                rightarmDirection *= -1;
+              }
+              rightarmY+=rightarmDirection;
+              if(rightarmY >= 500 || rightarmY <= 82)
+              {
+                rightarmDirection *= -1;
+              }
+              // left arm
+              rect(leftarmX,leftarmY,50,10);
+              leftarmX+=leftarmDirection;
+              if(leftarmX >= 500 || leftarmX <= 82)
+              {
+                leftarmDirection *= -1;
+              }
+              // left leg
+              rect(200,335,10,50);
+              // right leg
+              rect(290,rightlegY,10,50);
+              rightlegY+=rightlegDirection;
+              if(rightlegY <= 0 || rightlegY >= 370)
+              {
+                rightlegDirection *= -1;
+              }
+
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
